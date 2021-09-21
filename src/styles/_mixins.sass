@@ -2,6 +2,26 @@
     display: flex
     justify-content: center
     align-items: center
+
 @mixin grid-centered
     display: grid
     align-items: center
+
+@mixin grid-modal-item
+    display: grid
+    grid-template-columns: 1fr 30%
+    align-items: center
+    padding: 6px 12px
+
+@mixin grid-modal-notes
+    display: grid
+    grid-template-rows: min-content minmax(min-content,60px)
+    gap: 6px
+    align-items: center
+    padding: 6px 12px
+    p
+        height: 100%
+        width: 100%
+        background: $white
+        border-radius: 8px
+        padding: 8px
