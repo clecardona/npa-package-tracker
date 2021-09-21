@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { getStatus, getEta } from "./parcelMethods";
 
 export default function Parcel({ item }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const formattedEta = getEta(item.eta);
+  const status = getStatus(item.status)[0];
+  const statusColor = getStatus(item.status)[1];
 
   return (
     <article key={item.id}>
       <h2 className="title">#{item.parcel_id}</h2>
       <div className="status">
         <h3>Status: </h3>
-        <p>{item.status}</p>
+        <p className={statusColor}>{status}</p>
       </div>
       <div className="eta">
         <h3>Estimated arrival:</h3>
-        <p>{item.eta}</p>
+        <p>{formattedEta}</p>
       </div>
       <div className="location">
         <h3>Pickup location:</h3>

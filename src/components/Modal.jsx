@@ -2,8 +2,12 @@ import React from "react";
 import reactDom from "react-dom";
 
 import cross from "../assets/icns/cross.svg";
+import { getStatus, getEta } from "./parcelMethods";
 
 export default function Modal({ isOpen, onClose, item }) {
+  const formattedEta = getEta(item.eta);
+  const status = getStatus(item.status)[0];
+
   if (!isOpen) return null;
 
   return reactDom.createPortal(
@@ -29,11 +33,11 @@ export default function Modal({ isOpen, onClose, item }) {
         </div>
         <div className="status">
           <h3>Status: </h3>
-          <p>{item.status}</p>
+          <p>{status}</p>
         </div>
         <div className="eta">
           <h3>Estimated arrival:</h3>
-          <p>{item.eta}</p>
+          <p>{formattedEta}</p>
         </div>
 
         <div className="sender">
@@ -43,7 +47,9 @@ export default function Modal({ isOpen, onClose, item }) {
 
         <div className="notes">
           <h3>Notes:</h3>
-          <p>{item.notes}</p>
+          <p>
+            {item.notes} {item.notes === null && "no notes provided"}
+          </p>
         </div>
       </div>
     </>,
