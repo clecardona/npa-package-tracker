@@ -1,9 +1,24 @@
 header
     height: $header-height
-    @include flex-full-centered
+    display: grid
+    grid-template-columns: $header-height min-content 1fr
+    align-items: center
+    justify-items: center
     background: $orangeDark
     color: $white
-    //fill: $white
+
+    :nth-child(3)
+
+        justify-self: end
+        margin-right: 12px
+        text-align: right
+
+    h2
+        text-transform: uppercase
+
+    h4
+        text-transform: capitalize
+        font-weight: 200
 
     img
         border: 1px solid white

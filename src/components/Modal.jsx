@@ -1,5 +1,6 @@
 import React from "react";
 import reactDom from "react-dom";
+import Map from "./shared/Map";
 
 import cross from "../assets/icns/cross.svg";
 import { getStatus, getEta } from "./parcelMethods";
@@ -7,6 +8,11 @@ import { getStatus, getEta } from "./parcelMethods";
 export default function Modal({ isOpen, onClose, item }) {
   const formattedEta = getEta(item.eta);
   const status = getStatus(item.status)[0];
+
+  const coordinates = {
+    lat: item.location_coordinate_latitude,
+    lng: item.location_coordinate_longitude,
+  };
 
   if (!isOpen) return null;
 
@@ -21,12 +27,10 @@ export default function Modal({ isOpen, onClose, item }) {
             <img alt="close" src={cross} />
           </button>
         </div>
+        <div className="modal-map">
+          <Map coordinates={coordinates} />
+        </div>
 
-        <img
-          className="modal-map"
-          src="https://millerpoultry.com/wp-content/uploads/2019/04/Map-Placeholder.png"
-          alt="map"
-        />
         <div className="location">
           <h3>Pickup location:</h3>
           <p>{item.location_name}</p>

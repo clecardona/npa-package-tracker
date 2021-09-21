@@ -6,8 +6,10 @@ export default function Header() {
     <header>
       <img src={parcel} alt="logo" />
 
-      <h2>Trackcel </h2>
-      <h3>your Package Tracker</h3>
+      <h2>
+        <strong>Track</strong>cel
+      </h2>
+      <h4>your Package Tracker</h4>
     </header>
   );
 }
