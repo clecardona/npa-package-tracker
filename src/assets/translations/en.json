@@ -1,11 +1,6 @@
 {
-  "title": "Parcel tracker",
-  "language": "language",
+  "subtitle": "Your Package Tracker",
 
-  "form-placeholder": "Enter username (case sensitive)",
-  "form-submit-value": "Search",
-
-  "number": "Number",
   "status": "Status",
   "eta": "Estimated Arrival",
   "pickup-location": "Pick up Location",

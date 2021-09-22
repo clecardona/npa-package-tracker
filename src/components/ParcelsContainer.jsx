@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import api_mockup from "../assets/api_mockup.json";
 import Parcel from "./Parcel";
+import Spinner from "./shared/Spinner";
 import { CSSTransitionGroup } from "react-transition-group-v1";
 import { useTranslation } from "react-i18next";
 
 export default function ParcelsContainer() {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState(0);
-
   const [t, i18n] = useTranslation("common");
-
   const API_URL = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
 
   const Parcels = api_mockup.map((item) => {
@@ -34,8 +33,8 @@ export default function ParcelsContainer() {
   }
 
   return (
-    <div>
-      {status === 0 && <div className="spinner">Loading...</div>}
+    <main>
+      {status === 0 && <Spinner />}
       {status === 1 && (
         <div className="load-error">
           Cannot load data . Please check your connection
@@ -53,6 +52,6 @@ export default function ParcelsContainer() {
           </CSSTransitionGroup>
         </section>
       )}
-    </div>
+    </main>
   );
 }

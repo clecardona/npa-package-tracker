@@ -1,11 +1,6 @@
 {
-  "title": "Spåra din paket",
-  "language": "språk",
+  "subtitle": "Följa Din Paket",
 
-  "form-placeholder": "Skriv username (skiftlägeskänsliga)",
-  "form-submit-value": "Sök",
-
-  "number": "Nummer",
   "status": "Status",
   "eta": "Ankomstdatum",
   "pickup-location": "Plats",

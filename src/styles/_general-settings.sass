@@ -17,6 +17,7 @@ html
 main
   min-height: calc(100vh - $header-height - $footer-height)
   width: 100%
+  @include flex-full-centered
   @media screen and (min-width: $tabletBreakpoint)
     max-width: $tabletBreakpoint
     margin: auto

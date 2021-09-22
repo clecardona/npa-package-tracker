@@ -15,7 +15,7 @@ i18next.init({
   lng: "en",
   resources: {
     en: {
-      common: common_en, 
+      common: common_en,
     },
     fr: {
       common: common_fr,

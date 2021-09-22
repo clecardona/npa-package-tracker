@@ -1,11 +1,6 @@
 {
-  "title": "Suivi de colis",
-  "language": "langue",
+  "subtitle": "Votre suivi de colis",
 
-  "form-placeholder": "Entrer username (sensible a la casse)",
-  "form-submit-value": "Chercher",
-
-  "number": "Numero",
   "status": "Statut",
   "eta": "Arrivée estimée",
   "pickup-location": "Point de retrait",
