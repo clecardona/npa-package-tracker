@@ -1,0 +1,22 @@
+{
+  "subtitle": "Votre suivi de colis",
+
+  "status": "Statut",
+  "eta": "Arrivée estimée",
+  "pickup-location": "Point de retrait",
+  "parcel": "Colis",
+  "parcels": "Colis",
+
+  "nofound": "Pas de colis trouvé pour",
+  "found": "Colis disponible pour",
+
+  "more-details": "Plus d'infos",
+  "sender": "Expéditeur",
+  "notes": "Consignes",
+  "no-notes-provided": "Pas de consigne fournie",
+
+  "delivered": "Livré",
+  "ready-for-pickup": "En point de retrait",
+  "on-the-way": "En chemin",
+  "order-info-received": "Commande traitée"
+}
