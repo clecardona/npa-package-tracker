@@ -12,6 +12,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "react-transition-group": "^4.4.2",
+    "react-transition-group-v1": "npm:react-transition-group@1.x",
     "sass": "^1.41.1",
     "web-vitals": "^1.0.1"
   },

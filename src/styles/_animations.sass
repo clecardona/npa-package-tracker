@@ -9,6 +9,10 @@
   transform: translateY(30px)
   opacity: 0
 
+.fade-in-appear
+  filter: grayscale(1)
+  opacity: 0
+
 //Final state
 .fade-down-appear-active,
 .fade-up-appear-active
@@ -16,15 +20,7 @@
   transform: translateY(0px)
   transition: ease 400ms
 
-  @keyframes enter-animation
-    0%
-      opacity: 0
-      transform: translateX(30vw)
-
-    70%
-      opacity: 1
-      transform: translateX(-50px)
-
-    100%
-      opacity: 1
-      transform: translateX(0)
+.fade-in-appear-active
+  filter: grayscale(0)
+  opacity: 1
+  transition: ease 400ms

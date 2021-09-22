@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api_mockup from "../assets/api_mockup.json";
 import Parcel from "./Parcel";
+import { CSSTransitionGroup } from "react-transition-group-v1";
 
 export default function ParcelsContainer() {
   const [data, setData] = useState([]);
@@ -40,7 +41,13 @@ export default function ParcelsContainer() {
       {status === 2 && (
         <section className="section-parcels">
           <h2>Parcels</h2>
-          {Parcels}
+          <CSSTransitionGroup
+            transitionName={"fade-up"}
+            transitionAppear={true}
+            transitionAppearTimeout={400}
+          >
+            {Parcels}
+          </CSSTransitionGroup>
         </section>
       )}
     </div>

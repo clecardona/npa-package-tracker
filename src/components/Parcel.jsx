@@ -27,6 +27,7 @@ export default function Parcel({ item }) {
       <button className="btn btn-main btn-140" onClick={() => setIsOpen(true)}>
         <h3>More details</h3>
       </button>
+
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} item={item} />
     </article>
   );

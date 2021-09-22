@@ -2,6 +2,9 @@
   margin: 0
   padding: 0
   box-sizing: border-box
+  font-smooth: auto
+  -moz-osx-font-smoothing: auto
+  -webkit-font-smoothing: subpixel-antialiased
 
 html
   scroll-behavior: smooth
@@ -13,6 +16,10 @@ html
 
 main
   min-height: calc(100vh - $header-height - $footer-height)
+  width: 100%
+  @media screen and (min-width: $tabletBreakpoint)
+    max-width: $tabletBreakpoint
+    margin: auto
 
 ul,
 li,
