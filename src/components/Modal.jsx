@@ -3,12 +3,15 @@ import reactDom from "react-dom";
 import Map from "./shared/Map";
 import { CSSTransitionGroup } from "react-transition-group-v1";
 
+import { useTranslation } from "react-i18next";
+
 import cross from "../assets/icns/cross.svg";
-import { getStatus, getEta } from "./parcelMethods";
+import { getStatusColor, getEta } from "./parcelMethods";
 
 export default function Modal({ isOpen, onClose, item }) {
+  const [t, i18n] = useTranslation("common");
   const formattedEta = getEta(item.eta);
-  const status = getStatus(item.status)[0];
+  const status = getStatusColor(item.status);
 
   const coordinates = {
     lat: item.location_coordinate_latitude,
@@ -27,7 +30,9 @@ export default function Modal({ isOpen, onClose, item }) {
       >
         <div className="modal">
           <div className="modal-header">
-            <h2>Parcel #{item.parcel_id}</h2>
+            <h2>
+              {t("parcel")} #{item.parcel_id}
+            </h2>
             <button className="btn-close" onClick={onClose}>
               <img alt="close" src={cross} />
             </button>
@@ -37,27 +42,27 @@ export default function Modal({ isOpen, onClose, item }) {
           </div>
 
           <div className="location">
-            <h3>Pickup location:</h3>
+            <h3>{t("pickup-location")}:</h3>
             <p>{item.location_name}</p>
           </div>
           <div className="status">
-            <h3>Status: </h3>
-            <p>{status}</p>
+            <h3>{t("status")}: </h3>
+            <p>{t(`${item.status}`)}</p>
           </div>
           <div className="eta">
-            <h3>Estimated arrival:</h3>
+            <h3>{t("eta")}:</h3>
             <p>{formattedEta}</p>
           </div>
 
           <div className="sender">
-            <h3>Sender:</h3>
+            <h3>{t("sender")}:</h3>
             <p>{item.sender}</p>
           </div>
 
           <div className="notes">
-            <h3>Notes:</h3>
+            <h3>{t("notes")}:</h3>
             <p>
-              {item.notes} {item.notes === null && "no notes provided"}
+              {item.notes} {item.notes === null && `${t("no-notes-provided")}`}
             </p>
           </div>
         </div>

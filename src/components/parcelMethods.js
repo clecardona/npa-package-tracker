@@ -1,17 +1,17 @@
 const moment = require("moment");
 
-export function getStatus(rawStatus) {
-  switch (rawStatus) {
+export function getStatusColor(status) {
+  switch (status) {
     case "delivered":
-      return ["Delivered", "orange"];
+      return "orange";
     case "ready-for-pickup":
-      return ["Ready for pickup", "green"];
+      return "green";
     case "on-the-way":
-      return ["On the way", "pink"];
+      return "pink";
     case "order-info-received":
-      return ["Info received", "blue"];
+      return "blue";
     default:
-      return ["Parcel Lost...", "red"];
+      return "red";
   }
 }
 

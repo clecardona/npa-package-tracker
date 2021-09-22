@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import api_mockup from "../assets/api_mockup.json";
 import Parcel from "./Parcel";
 import { CSSTransitionGroup } from "react-transition-group-v1";
+import { useTranslation } from "react-i18next";
 
 export default function ParcelsContainer() {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState(0);
+
+  const [t, i18n] = useTranslation("common");
 
   const API_URL = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
 
@@ -40,7 +43,7 @@ export default function ParcelsContainer() {
       )}
       {status === 2 && (
         <section className="section-parcels">
-          <h2>Parcels</h2>
+          <h2>{t("parcels")}</h2>
           <CSSTransitionGroup
             transitionName={"fade-up"}
             transitionAppear={true}

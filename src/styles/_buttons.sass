@@ -31,31 +31,43 @@ button
 
 .btn-ghost
   background: none
-  border: 2px solid $red
+  border: 2px solid white
+  color: white
   border-radius: 44px
 
   h3
     color: $red
     text-transform: capitalize
 
-  .icon-btn
-    width: 20px
-    height: 20px
-    margin: 6px
-    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(-45deg)
-
   &:hover
+    cursor: pointer
     transition: ease 0.3s
-    color: $redDark
-    border-color: $redDark
+    background-color: #0000001c
+    border-color: $white
+
     h3
-      color: $redDark
+      color: $orangeDark
 
     svg path
-      fill: $redDark
+      fill: $orangeDark
 
 .btn-140
   width: 140px
+
+.btn-select
+  cursor: pointer
+  height: 100%
+  padding: 0
+  color: inherit
+  border: none
+  padding-right: 20px
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  background: url(https://clecardona.com/npa/icns/chevron-down-white.svg) no-repeat right
+
+  text-align: center
+  font-size: 25px
 
 .pill
   height: 25px
