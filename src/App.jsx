@@ -5,8 +5,6 @@ import Footer from "./components/shared/Footer";
 import ParcelsContainer from "./components/ParcelsContainer";
 import { useTranslation } from "react-i18next";
 
-//todo - host the project
-
 export default function App() {
   const [t, i18n] = useTranslation("common");
   const languageLocal = JSON.parse(localStorage.getItem("lang"));
@@ -24,9 +22,7 @@ export default function App() {
   return (
     <div className="App">
       <Header selectLanguage={selectLanguage} />
-
       <ParcelsContainer />
-
       <Footer />
     </div>
   );

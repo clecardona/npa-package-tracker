@@ -11,7 +11,7 @@ export default function ParcelsContainer() {
   const [t, i18n] = useTranslation("common");
   const API_URL = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
 
-  const Parcels = api_mockup.map((item) => {
+  const Parcels = data.map((item) => {
     return <Parcel item={item} key={item.id} />;
   });
 
