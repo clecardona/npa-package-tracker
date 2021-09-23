@@ -6,12 +6,11 @@ import { CSSTransitionGroup } from "react-transition-group-v1";
 import { useTranslation } from "react-i18next";
 
 import cross from "../assets/icns/cross.svg";
-import { getStatusColor, getEta } from "./parcelMethods";
+import { getEta } from "./parcelMethods";
 
 export default function Modal({ isOpen, onClose, item }) {
   const [t, i18n] = useTranslation("common");
   const formattedEta = getEta(item.eta);
-  const status = getStatusColor(item.status);
 
   const coordinates = {
     lat: item.location_coordinate_latitude,
