@@ -1,12 +1,12 @@
 import React from "react";
 import reactDom from "react-dom";
-import { CSSTransitionGroup } from "react-transition-group-v1";
 import { useTranslation } from "react-i18next";
 
 import Map from "./shared/Map";
 import { getEta } from "../utils/parcelMethods";
 import ButtonClose from "./shared/ButtonClose";
 import ModalItem from "./shared/ModalItem";
+import AnimateContainer from "./shared/AnimateContainer";
 
 export default function Modal({ isOpen, onClose, item }) {
   const [t, i18n] = useTranslation("common");
@@ -21,11 +21,8 @@ export default function Modal({ isOpen, onClose, item }) {
   return reactDom.createPortal(
     <>
       <div className="modal-overlay" onClick={onClose} />
-      <CSSTransitionGroup
-        transitionName={"fade-in"}
-        transitionAppear={true}
-        transitionAppearTimeout={400}
-      >
+
+      <AnimateContainer animation="fade-in">
         <div className="modal">
           <div className="modal-header">
             <h2>
@@ -42,7 +39,7 @@ export default function Modal({ isOpen, onClose, item }) {
           <ModalItem label="sender" value={item.sender} />
           <ModalItem label="notes" value={item.notes} />
         </div>
-      </CSSTransitionGroup>
+      </AnimateContainer>
     </>,
     document.getElementById("modal")
   );

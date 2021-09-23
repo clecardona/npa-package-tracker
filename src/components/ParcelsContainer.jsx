@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { CSSTransitionGroup } from "react-transition-group-v1";
 import { useTranslation } from "react-i18next";
 
 //import api_mockup from "../assets/api_mockup.json"; // backup version
 import Parcel from "./Parcel";
 import Spinner from "./shared/Spinner";
+import BoxError from "./shared/BoxError";
+import AnimateContainer from "./shared/AnimateContainer";
 
 export default function ParcelsContainer() {
   const [data, setData] = useState([]);
@@ -27,34 +28,21 @@ export default function ParcelsContainer() {
     setData(json);
     setStatus(2);
   }
-
   function onFetchFail(error) {
     console.log("Error", error);
     setStatus(1);
   }
-
   return (
     <main>
       {status === 0 && <Spinner />}
-      {status === 1 && (
-        /* todo -refactor  */
-        <div className="load-error">
-          Cannot load data . Please check your connection
-        </div>
-      )}
+      {status === 1 && <BoxError />}
       {status === 2 && (
         <section className="section-parcels">
-          <h3>{t("hello")} Carl Johan</h3>
+          <h3>{t("hello")} Carl Johan !</h3>
           <h2>
             {t("here-are-your")} {t("parcels")} :
           </h2>
-          <CSSTransitionGroup
-            transitionName={"fade-up"}
-            transitionAppear={true}
-            transitionAppearTimeout={400}
-          >
-            {Parcels}
-          </CSSTransitionGroup>
+          <AnimateContainer animation="fade-up">{Parcels}</AnimateContainer>
         </section>
       )}
     </main>
