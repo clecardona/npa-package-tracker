@@ -1,12 +1,12 @@
 import React from "react";
 import reactDom from "react-dom";
-import Map from "./shared/Map";
 import { CSSTransitionGroup } from "react-transition-group-v1";
-
 import { useTranslation } from "react-i18next";
 
-import cross from "../assets/icns/cross.svg";
-import { getEta } from "./parcelMethods";
+import Map from "./shared/Map";
+import { getEta } from "../utils/parcelMethods";
+import ButtonClose from "./shared/ButtonClose";
+import ModalItem from "./shared/ModalItem";
 
 export default function Modal({ isOpen, onClose, item }) {
   const [t, i18n] = useTranslation("common");
@@ -18,7 +18,6 @@ export default function Modal({ isOpen, onClose, item }) {
   };
 
   if (!isOpen) return null;
-
   return reactDom.createPortal(
     <>
       <div className="modal-overlay" onClick={onClose} />
@@ -32,38 +31,16 @@ export default function Modal({ isOpen, onClose, item }) {
             <h2>
               {t("parcel")} #{item.parcel_id}
             </h2>
-            <button className="btn-close" onClick={onClose}>
-              <img alt="close" src={cross} />
-            </button>
+            <ButtonClose onClose={onClose} />
           </div>
           <div className="modal-map">
             <Map coordinates={coordinates} />
           </div>
-
-          <div className="location">
-            <h3>{t("pickup-location")}:</h3>
-            <p>{item.location_name}</p>
-          </div>
-          <div className="status">
-            <h3>{t("status")}: </h3>
-            <p>{t(`${item.status}`)}</p>
-          </div>
-          <div className="eta">
-            <h3>{t("eta")}:</h3>
-            <p>{formattedEta}</p>
-          </div>
-
-          <div className="sender">
-            <h3>{t("sender")}:</h3>
-            <p>{item.sender}</p>
-          </div>
-
-          <div className="notes">
-            <h3>{t("notes")}:</h3>
-            <p>
-              {item.notes} {item.notes === null && `${t("no-notes-provided")}`}
-            </p>
-          </div>
+          <ModalItem label="location" value={item.location_name} />
+          <ModalItem label="status" value={item.status} />
+          <ModalItem label="eta" value={formattedEta} />
+          <ModalItem label="sender" value={item.sender} />
+          <ModalItem label="notes" value={item.notes} />
         </div>
       </CSSTransitionGroup>
     </>,

@@ -1,9 +1,12 @@
 {
   "subtitle": "Votre suivi de colis",
 
+  "hello": "Bonjour",
+  "here-are-your": "Voici vos",
+
   "status": "Statut",
   "eta": "Arrivée estimée",
-  "pickup-location": "Point de retrait",
+  "location": "Point de retrait",
   "parcel": "Colis",
   "parcels": "Colis",
 

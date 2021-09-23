@@ -1,9 +1,12 @@
 {
-  "subtitle": "Följa Din Paket",
+  "subtitle": "Spåra Dina Paket",
+
+  "hello": "Hej",
+  "here-are-your": "Här finns dina",
 
   "status": "Status",
   "eta": "Ankomstdatum",
-  "pickup-location": "Plats",
+  "location": "Plats",
   "parcel": "Paket",
   "parcels": "Paket",
 

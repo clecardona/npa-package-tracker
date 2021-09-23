@@ -1,9 +1,12 @@
 {
   "subtitle": "Your Package Tracker",
 
+  "hello": "Hello",
+  "here-are-your": "Here are your",
+
   "status": "Status",
   "eta": "Estimated Arrival",
-  "pickup-location": "Pick up Location",
+  "location": "Pick up Location",
   "parcel": "Parcel",
   "parcels": "Parcels",
 

@@ -1,11 +1,18 @@
 header
-    height: $header-height
-    display: grid
-    grid-template-columns: $header-height 1fr min-content
-    align-items: center
-    justify-items: center
     background: $orangeDark
-    color: $white
+    .header-container
+        height: $header-height
+        display: grid
+        grid-template-columns: $header-height 1fr min-content
+        align-items: center
+        justify-items: center
+        color: $white
+
+        width: 100%
+        max-width: $tabletBreakpoint
+        margin: auto
+        @media screen and (min-width: $desktopBreakpoint)
+            max-width: $desktopBreakpoint
 
     :nth-child(3)
 
