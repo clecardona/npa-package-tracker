@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./styles/base.sass";
-import Header from "./components/shared/Header";
-import Footer from "./components/shared/Footer";
-import ParcelsContainer from "./components/ParcelsContainer";
 import { useTranslation } from "react-i18next";
+
+import "./styles/base.sass";
+
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import ParcelsContainer from "./components/ParcelsContainer";
 
 export default function App() {
   const [t, i18n] = useTranslation("common");
