@@ -13,7 +13,7 @@ This project was bootstrapped with Create React App.
 
 This is a Package Tracker App.
 The user can track his parcel by entering the parcel reference.
-[Go to website]() website under construction
+[Go to website](https://npa-package-tracker.web.app/)
 
 ## 2. Setup
 
