@@ -19,13 +19,21 @@ header
         justify-self: end
         text-align: right
 
-    h2
-        text-transform: uppercase
+    .header-title
+        height: min-content
         justify-self: start
 
-    h4
-        text-transform: capitalize
-        font-weight: 200
+        display: grid
+        grid-template-rows: min-content min-content
+        margin: 0
+        h2
+            text-transform: uppercase
+            margin-bottom: -3px
+
+        h4
+            text-transform: capitalize
+            font-weight: 200
+            margin-top: -3px
 
     img
         border: 1px solid white

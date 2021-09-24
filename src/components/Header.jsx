@@ -11,11 +11,13 @@ export default function Header({ selectLanguage }) {
       <header>
         <div className="header-container">
           <img src={parcel} alt="logo" />
-
-          <h2>
-            <strong>Track</strong>cel <br />
+          <div className="header-title">
+            <h2>
+              <strong>Track</strong>cel <br />
+            </h2>
             <h4>{t("subtitle")}</h4>
-          </h2>
+          </div>
+
           <Dropdown selectLanguage={selectLanguage} />
         </div>
       </header>
