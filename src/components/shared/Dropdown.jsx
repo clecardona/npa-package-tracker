@@ -24,7 +24,8 @@ export default function Dropdown({ selectLanguage }) {
           setIsOpen(!isOpen);
         }}
       >
-        Language
+        <h4>Language</h4>
+
         <img src={down} alt="down" className="dropdown-arrow" />
       </button>
 
