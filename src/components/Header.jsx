@@ -17,7 +17,8 @@ export default function Header({ selectLanguage }) {
             </h2>
             <h4>{t("subtitle")}</h4>
           </div>
-
+        </div>
+        <div className="dropdown-container">
           <Dropdown selectLanguage={selectLanguage} />
         </div>
       </header>

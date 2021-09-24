@@ -1,50 +1,61 @@
-.dropdown
+.dropdown-container
+    //border: 2px red solid
     position: absolute
-    margin-right: 12px
-    top: 14px
-    width: 120px
-    display: flex
-    flex-direction: column
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: 100%
+    max-width: $tabletBreakpoint
 
-    .btn-ghost
+    height: $header-height
+    z-index: 10
+    padding: 12px
 
-        z-index: 1
+    .dropdown
+        position: absolute
+        //top: 14px
+        right: 12px
+        width: 120px
+        display: flex
+        flex-direction: column
+        .caret
 
-        width: 100%
-        background: $orangeDark
-        img
-            padding: 0
-            margin-left: 5px
-            border: none
-            height: 16px
-            width: 16px
+            margin-top: -12px
 
-    .caret
-
-        margin-top: -12px
-
-        z-index: 0
-        background: $white
-        color: $orangeDark
-        height: max-content
-        width: 100%
-        padding: 24px 12px 12px 12px
-        border-radius: 0 0 12px 12px
-        box-shadow: 0 5px 5px rgba(0,0 ,0 ,.05 )
-
-        li .dropdown-item
+            z-index: 0
+            background: $white
+            color: $orangeDark
+            height: max-content
             width: 100%
+            padding: 24px 12px 12px 12px
+            border-radius: 0 0 12px 12px
+            box-shadow: 0 5px 5px rgba(0,0 ,0 ,.05 )
 
-            display: flex
-            justify-content: start
-            align-items: center
-            cursor: pointer
-            padding: 4px
-            margin: 3px 0
-            border-radius: 8px
+            li .dropdown-item
+                width: 100%
 
+                display: flex
+                justify-content: start
+                align-items: center
+                cursor: pointer
+                padding: 4px
+                margin: 3px 0
+                border-radius: 8px
+
+                img
+                    border: none
+
+                &:hover
+                    background: $grayLight
+        .btn-ghost
+
+            z-index: 1
+
+            width: 100%
+            background: $orangeDark
             img
+                padding: 0
+                margin-left: 5px
                 border: none
-
-            &:hover
-                background: $grayLight
+                height: 16px
+                width: 16px
