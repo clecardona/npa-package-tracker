@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./styles/base.sass";
-import Header from "./components/shared/Header";
-import Footer from "./components/shared/Footer";
-import ParcelsContainer from "./components/ParcelsContainer";
 import { useTranslation } from "react-i18next";
 
-//todo - host the project
+import "./styles/base.sass";
+
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import ParcelsContainer from "./components/ParcelsContainer";
 
 export default function App() {
   const [t, i18n] = useTranslation("common");
@@ -24,9 +24,7 @@ export default function App() {
   return (
     <div className="App">
       <Header selectLanguage={selectLanguage} />
-
       <ParcelsContainer />
-
       <Footer />
     </div>
   );

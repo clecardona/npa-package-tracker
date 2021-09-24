@@ -1,8 +1,8 @@
 import React from "react";
 
-import IconSocial from "./IconSocial";
-import iconsData from "../../assets/icons.json";
-import contactData from "../../assets/contact.json";
+import IconSocial from "./shared/IconSocial";
+import iconsData from "../assets/icons.json";
+import contactData from "../assets/contact.json";
 
 export default function Footer() {
   const contact = contactData[0];

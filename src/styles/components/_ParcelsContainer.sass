@@ -1,12 +1,23 @@
 .section-parcels
     margin: 0.8rem
     width: 100%
+
+    span
+        display: grid
+        grid-template-columns: 1fr
+        gap: 12px
+        @media screen and (min-width:$tabletBreakpoint)
+            max-width: 1200px
+            grid-template-columns: repeat(2,1fr)
+        @media screen and (min-width:$desktopBreakpoint)
+            grid-template-columns: repeat(3,1fr)
+
     article
-        margin: 0.8rem 0
+        //margin: 0.8rem 0
         padding: 0.8rem
         background: $grayLight
         border-radius: 8px
-        height: 180px
+        height: minmax(min-content,180px)
 
         @include grid-centered
         grid-template-columns: 1fr max-content
