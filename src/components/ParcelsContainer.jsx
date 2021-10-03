@@ -32,6 +32,7 @@ export default function ParcelsContainer() {
     console.log("Error", error);
     setStatus(1);
   }
+  
   return (
     <main>
       {status === 0 && <Spinner />}

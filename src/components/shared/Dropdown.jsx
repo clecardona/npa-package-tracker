@@ -7,6 +7,7 @@ import down from "../../assets/icns/down.svg";
 export default function Dropdown({ selectLanguage }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // You don't need to parse the language stored in local storage as is a simple string, not an array. -1
   const language = JSON.parse(localStorage.getItem("lang"));
   const [state, setState] = useState(true);
 

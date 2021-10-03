@@ -1,5 +1,6 @@
 import React from "react";
 
+// use better names like flagEN, etc. Because in the switch you say case "en" and then return [en] and is confusing because they are related but no the same -1
 import en from "../../assets/icns/en.png";
 import sv from "../../assets/icns/sv.png";
 import fr from "../../assets/icns/fr.png";
